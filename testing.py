@@ -1,4 +1,4 @@
-from recommend import similar, transformData, similarItems, recommendItems
+from recommend import similar, transformData, similarItems, recommendItemsNorm, slopeOne
 from data import loadData, critics, loadNewData
 from engines import euclid, spearman, manhattan, pearson, cosine, tanimotoDistance, minkowskiDistance#, adjustedCosine
 import itertools
@@ -65,27 +65,15 @@ def rmse(ordered, test):
 # dataset is the entire data
 # itemData is the modified dataset
 def driver(i):
-	#predicted = {}
+	predictedNorm = {}
+	predictedSlope = {}
 	start = time.clock()
 	simItem = similarItems(dataset, itemData, i)
 	end = time.clock()
 	# Time taken for calculating the similarity
-	print end - start
-	#print simItem
-	'''for each in test:
-		predicted[each] = recommendItems(itemData, simItem, each, n)
-#	print predicted
-#comment starts here
-#	print end - start
-	ordered = {}
-	for each in predicted:
-		ordered.setdefault(each,{})
-		for movie in predicted[each]:
-			ordered[each][movie[1]] = movie[0]
-	mae_error = mae(ordered, test)
-	print mae_error
-	rmse_error = rmse(ordered, test)
-	print rmse_error
-#comment ends here'''
-for i in range(0, 7):
+	# print end - start
+
+	predictedNorm = recommendItemsNorm(itemData, simItem, dataset)
+
+for i in range(0, 1):
 	driver(i)
