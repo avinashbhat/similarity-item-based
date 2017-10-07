@@ -31,6 +31,36 @@ def loadData(path = '/home/avinash/Desktop/item/ml-100k/'):
 		data[user][movies[i]] = float(rating)
 	return data
 
+# A function to load the 1m dataset.
+def load1mData(path = '/home/avinash/Desktop/item/ml-1m/'):
+	fhandle = open(path+'movies.dat')
+	movies = {}
+	for line in fhandle:
+		(i, t) = line.split('::')[0:2]
+		movies[i] = t
+	data = {}
+	fhandle = open(path+'ratings.dat')
+	for line in fhandle:
+		(user, i, rating, t) = line.split('::')
+		data.setdefault(user, {})
+		data[user][movies[i]] = float(rating)
+	return data
+
+# A function to load the 1m dataset.
+def load10mData(path = '/home/avinash/Desktop/item/ml-10M100K/'):
+	fhandle = open(path+'movies.dat')
+	movies = {}
+	for line in fhandle:
+		(i, t) = line.split('::')[0:2]
+		movies[i] = t
+	data = {}
+	fhandle = open(path+'ratings.dat')
+	for line in fhandle:
+		(user, i, rating, t) = line.split('::')
+		data.setdefault(user, {})
+		data[user][movies[i]] = float(rating)
+	return data
+
 # A function to check if the value is in a valid data format
 def isFloat(num):
 	try:
