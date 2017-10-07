@@ -1,5 +1,5 @@
 from engines import pearson, euclid, spearman, manhattan, cosine, tanimotoDistance, minkowskiDistance#, adjustedCosine
-from data import loadData, critics
+from data import loadData, critics, load1mData, load10mData, loadNewData
 import math
 
 # n is how many results you want 
@@ -15,6 +15,7 @@ def similar(itemData,item,e = 0,n=5):
 				4: cosine,
 				5: tanimotoDistance,
 				6: minkowskiDistance }
+
 	sim = indices[e]
 	s = []
 	for movie in itemData:
@@ -47,7 +48,6 @@ def transformData(data):
 def similarItems(dataset, itemData, e = 0, n=5):
 	result = {}
 	for item in itemData:
-		#print item
 		result[item] = similar(itemData, item, e)
 	return result
 
