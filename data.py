@@ -17,7 +17,7 @@ critics={'Lisa Rose': {'Lady in the Water': 2.5, 'Snakes on a Plane': 3.5,
 'Toby': {'Snakes on a Plane':4.5,'You, Me and Dupree':1.0,'Superman Returns':4.0}}
 
 # A function to load the 100k dataset.
-def loadData(path = '/home/avinash/Desktop/item/ml-100k/'):
+def loadData(path = 'movielens/ml-100k/'):
 	fhandle = open(path+'u.item')
 	movies = {}
 	for line in fhandle:
@@ -32,7 +32,7 @@ def loadData(path = '/home/avinash/Desktop/item/ml-100k/'):
 	return data
 
 # A function to load the 1m dataset.
-def load1mData(path = '/home/avinash/Desktop/item/ml-1m/'):
+def load1mData(path = 'movielens/ml-1m/'):
 	fhandle = open(path+'movies.dat')
 	movies = {}
 	for line in fhandle:
@@ -47,7 +47,7 @@ def load1mData(path = '/home/avinash/Desktop/item/ml-1m/'):
 	return data
 
 # A function to load the 1m dataset.
-def load10mData(path = '/home/avinash/Desktop/item/ml-10M100K/'):
+def load10mData(path = '/home/avinash/Desktop/item/movielens/ml-10M100K/'):
 	fhandle = open(path+'movies.dat')
 	movies = {}
 	for line in fhandle:
@@ -71,7 +71,7 @@ def isFloat(num):
 
 
 # A function to load recent datasets. (Here, ml-latest-small and ml-latest )
-def loadNewData(path = 'ml-latest-small/'):
+def loadNewData(path = 'movielens/ml-latest-small/'):
 	fhandle = open(path+'movies.csv')
 	movies = {}
 	for line in fhandle:

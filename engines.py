@@ -1,5 +1,5 @@
 import math
-from data import loadData, critics, loadNewData
+from data import loadData, critics, loadNewData, load1mData
 
 # Takes 3 parameters, data, names of the items
 def euclid(itemData,ione,itwo):
